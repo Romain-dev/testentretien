@@ -46,6 +46,10 @@ if (Meteor.isClient) {
         createdAt: new Date()
       });
     },
+
+    'mouseup .cube'(event) {
+      Cubes.remove({_id: event.currentTarget.id});
+    },
     'click #clear-cubes'() {
         //Call to server
         Meteor.call('cubes.clear');
