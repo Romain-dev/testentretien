@@ -23,12 +23,12 @@ x3d {
 #ui-overlay button {
   padding: 8px 12px;
   border: none;
-  background: #e74c3c;
+  background: #3ce761;
   color: white;
   cursor: pointer;
   border-radius: 4px;
 }
 
 #ui-overlay button:hover {
-  background: #c0392b;
+  background: #1acc50;
 }

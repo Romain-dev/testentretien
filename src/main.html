@@ -11,12 +11,16 @@
 
 <template name="world">
    <div id="ui-overlay">
-    <button id="clear-cubes">Clear Cubes</button>
-    <span>Cubes: {{cubeCount}}</span>
+    <button id="clear-cubes">Restart game</button>
+    <span>Score: {{playerScore}}</span>
   </div>
 
   <x3d>
     <scene>
+      <viewpoint
+      position="0 0 60"
+      fieldOfView="0.8">
+    </viewpoint>
       <!-- Floor -->
       <transform id="floor">
         <shape>
@@ -29,10 +33,10 @@
 
       <!-- Dyn Cubes -->
       {{#each cubes}}
-        <transform class="cube" id="{{_id}}" translation="{{x}} {{y}} {{z}}">
+        <transform class="cube" id="{{_id}}" data-score={{score}} translation="{{x}} {{y}} {{z}}">
           <shape>
             <appearance>
-              <material diffuseColor="1 0 0"></material>
+              <material diffuseColor="{{color}}"></material>
             </appearance>
             <box size="1 1 1"></box>
           </shape>

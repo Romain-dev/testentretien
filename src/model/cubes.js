@@ -5,6 +5,7 @@ export const Cubes = new Mongo.Collection('cubes');
 
 Meteor.methods({
   'cubes.clear'() {
+    //Prevent execution from client
     if(!this.isSimulation) {
         return Cubes.removeAsync({});
     }
